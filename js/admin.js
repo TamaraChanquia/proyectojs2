@@ -9,7 +9,12 @@
  -id (automatico)
 
 */
+const formularioProductoHTML = document.getElementById("formularioProducto")
 
+formularioProductoHTML.addEventListener('submit', () => {
+    alert('Evento submit')
+
+})
 
 const consolas = [
     {
@@ -47,8 +52,36 @@ const consolas = [
 
 ];
 
+const tableBodyHTML = document.querySelector("#table-body")
+
 consolas.forEach(function (conso) {
 
-    document.write(conso.titulo)
+    tableBodyHTML.innerHTML += `<tr>
+   <td class="table-image">
+       <img src="${conso.imagen}"
+           alt="${conso.titulo}">
+   </td>
+   <td class="table-title">${conso.titulo}</td>
+   <td class="table-description">${conso.descripcion}
+   </td>
+   <td class="table-price">${conso.precio}</td>
+   <td class="table-category">${conso.categoria}</td>
+</tr>`
 
 })
+
+/*
+
+ <tr>
+                <td class="table-image">
+                    <img src="https://stylewatch.vtexassets.com/arquivos/ids/233580-800-800?v=638188815205330000&width=800&height=800&aspect=true"
+                        alt="">
+                </td>
+                <td class="table-title">ps5</td>
+                <td class="table-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, labore!
+                </td>
+                <td class="table-price">1000</td>
+                <td class="table-category">consolas</td>
+            </tr>
+*/
+
